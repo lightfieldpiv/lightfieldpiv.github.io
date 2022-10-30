@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Full-Volume 3D Fluid Flow Reconstruction with Light Field PIV.">
+  <meta name="keywords" content="LightField, PIV">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Full-Volume 3D Fluid Flow Reconstruction with Light Field PIV</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  
+  <!-- THEME STYLES -->
+  <!-- <link href="./static/css/layout.min.css" rel="stylesheet" type="text/css"/> -->
+  
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Full-Volume 3D Fluid Flow Reconstruction with Light Field PIV</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dingjianyun830.github.io">Yuqi Ding</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/lizhong19900216/">Zhong Li</a><sup>2</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://zhangchen8.github.io/">Zhang Chen</a><sup>5</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://yeauxji.github.io">Yu Ji</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.yu-jingyi.com/">Jingyi Yu</a><sup>4</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://ivlab.cse.lsu.edu">Jinwei Ye</a><sup>5</sup>
+            </span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Louisiana State University,</span>
+            <span class="author-block"><sup>2</sup>Innopeak Technology,</span>
+            <span class="author-block"><sup>3</sup>Tencent Pixel Lab,</span>
+            <span class="author-block"><sup>4</sup>ShanghaiTech University,</span>
+			      <span class="author-block"><sup>5</sup>George Mason University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper(comming soon)</span>
+                </a>
+				      </span>
+				
+				<!-- Video Link.
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+			   -->
+
+			  <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/lightfieldpiv/ParticleGeneration/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+				      </span>
+        
+				<!-- Supp Mat. -->
+				<span class="link-block">
+				  <a href=""
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+              <span>Supplementary Material(coming soon)</span>
+            </a>
+        </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+	
+	<!-- Abstract. -->
+	<div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <h2 class="title is-3">Abstract</h2>
+		<hr>
+
+    <img src="static/images/pipeline.png" width = 100%  height= auto/>
+    </img>
+		
+		<div class="content has-text-justified">
+          <p>
+            Particle Imaging Velocimetry (PIV) is a classical method that estimates fluid flow by analyzing the motion of injected particles. To reconstruct and track the swirling particles is a difficult computer vision problem, as the particles are dense in the fluid volume and have similar appearances. Further, tracking a large number of particles is particularly challenging due to heavy occlusion. Here we present a low-cost PIV solution that uses compact lenslet-based light field cameras as imaging device. We develop novel optimization algorithms for dense particle 3D reconstruction and tracking. As a single light field camera has limited capacity in resolving depth (z-dimension measurement), the resolution of 3D reconstruction on the x-y plane is much higher than along the z-axis. To compensate for the imbalanced resolution in 3D, we use two light field cameras positioned at an orthogonal angle to capture particle images. In this way, we can achieve high-resolution 3D particle reconstruction in the full fluid volume. For each time frame, we first estimate particle depths under a single viewpoint by exploiting the focal stack symmetry of light field. We then fuse the recovered 3D particles in two views by solving a linear assignment problem (LAP). Specifically, we propose an anisotropic point-to-ray distance as matching cost to handle the resolution mismatch. Finally, given a sequence of 3D particle reconstructions over time, we recover the full-volume 3D fluid flow with a physically-constrained optical flow, which enforces local motion rigidity and fluid incompressibility. We perform comprehensive experiments on synthetic and real data for ablation and evaluation. We show that our method recovers full-volume 3D fluid flows of various types. Two-view reconstruction results achieves higher accuracy than those with one view only.   
+          </p>
+        </div>
+        
+      </div>
+    </div>
+	<!--/ Abstract. -->
+   
+  </div>
+</section>
+
+
+<!-- reference. 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{Ding_2022_3dv,
+  author    = {Ding, Yuqi and Ji, Yu and Ye, Jinwei},
+  title     = {Polar-Photometric Stereo Under Natural Illumination},
+  booktitle = {3DV},
+  month     = {September},
+  year      = {2022},
+}</code></pre>
+  </div>
+</section>
+-->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Template from <a
+              href="https://github.com/nerfies/nerfies.github.io">this site</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
